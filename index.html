@@ -1,16 +1,167 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-        />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Jekyll v3.8.6">
+        <title>Pronosticos</title>
+        <link rel="canonical" href="http://getbootstrap.com/docs/4.4/examples/album/">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-extra-markers@1.0.6/dist/css/leaflet.extra-markers.min.css">
+
+        <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+         integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+         crossorigin=""/> -->
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-extra-markers@1.0.6/dist/css/leaflet.extra-markers.min.css">
+
+
         <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
         <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
         <!-- <script src="windy.js"></script> -->
         <script src="script.js"></script>
         <link rel="stylesheet" href="style.css">
+
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+        <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+        <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+        <link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+        <link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+        <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+        <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+        <meta name="theme-color" content="#563d7c">
+
+        <link href="album.css" rel="stylesheet">
     </head>
     <body>
-        <div id="windy"></div>
+      <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contacto</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white"><i class="fab fa-instagram-square"></i>  Instagram</a></li>
+                <li><a href="#" class="text-white"><i class="fab fa-facebook-square"></i>  Facebook</a></li>
+                <li><a href="#" class="text-white"><i class="fas fa-envelope"></i>  Correo</a></li>
+              </ul>
+            </div>
+            <!-- <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white text-center">Acerca del Instituto Nacional de Hidraúlica</h4>
+              <p class="text-muted text-justify">El Instituto Nacional de Hidráulica fue creado en 1953 como un laboratorio dependiente de la Dirección de Obras Portuarias del MOP, con el propósito de realizar estudios e investigaciones de estructuras marítimas en modelo a escala reducida. En 1964 amplió sus actividades con estudios de diversas obras hidráulicas de regadío, sanitarias y otras, para entidades estatales y privadas. (Ley 15.840). En noviembre de 1967 se crea el Instituto Nacional de Hidráulica de Chile (INH), como una Corporación Autónoma de Derecho Público del Estado Chileno (Decreto Supremo MOP Nº 930/1967), con el fin de desarrollar actividades de investigación y estudios en materias hídricas y de mecánica de fluidos. En 1980 incorporó las instalaciones y equipos del canal de calibración de molinetes e instaló un banco de prueba de bombas centrífugas. En los años siguientes, en el INH ha habido una constante actualización técnica, tanto de los instrumentos de medición, como del equipamiento computacional y software especializado.</p>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+          <a href="index.html" class="navbar-brand d-flex align-items-center", size: "100x70">
+          <img src="data:image/png;base64,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" alt="inh" style="width: 115px;">
+          </a>
+          <a href="index.html" class="navbar-brand d-flex align-items-center", size: "100x70">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQDeYrn3j4596PP1TFIhXmx8taAwtZHwQDVEA&usqp=CAU" alt="inh" style="width: 115px;">
+          </a>
+          <a href="index.html" class="navbar-brand d-flex align-items-center", size: "100x70">
+          <img src="image/meric.png" alt="inh" style="width: 115px;">
+          </a>
+          <a href="index.html" class="navbar-brand d-flex align-items-center", size: "100x70">
+          <img src="https://www.cmm.uchile.cl/wp-content/themes/Chameleon-CMM/images/logo_cmm01.png" alt="inh" style="width: 115px;">
+          </a>
+          <a href="index.html" class="navbar-brand d-flex align-items-center", size: "100x70">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/MttChile.png" alt="inh" style="width: 115px;">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main role="main">
+      <section class="jumbotron text-center mar">
+        <div class="container">
+          <h1>Sistema de Pronóstico de oleaje para Puertos del Estado</h1>
+          <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </section>
+      <div class="album py-5 bg-light mar">
+        <div class="container">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="image/testAnimated.gif" class="d-block w-100" alt="oleaje1">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>First slide label</h5>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://cooperativa.cl/noticias/site/artic/20200824/imag/foto_0000000520200824202850.jpg" class="d-block w-100" alt="oleaje2">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>First slide label</h5>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://www.ilustrado.cl/wp-content/uploads/2020/08/viento.jpg" class="d-block w-100" alt="oleaje3">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>First slide label</h5>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <br>
+
+          <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col">
+              <a class="btn btn-primary" href="map.html">Ir a Mapa</a>
+            </div>
+            <div class="col">
+              <a class="btn btn-success" href="table.html">Ir a Tabla</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <br>
+        <div id="back-to-top"><a href="#"><i class="btn btn-light float-right fa fa-chevron-up"></i></a></div>
+      </div>
+    </footer>
     </body>
 </html>

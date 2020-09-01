@@ -1,4 +1,36 @@
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+.logo{
+  width: 115px;
+}
 #windy {
-    width: 100%;
-    height: 100%;
+  height: 800px;
+  width: 100%;
+}
+body{
+  background-image: url(https://www.unicoos.com/blog/wp-content/uploads/2018/09/underwater-802092_1920.jpg);
+}
+.mar{
+  margin-right: 25px;
+  margin-left: 25px;
+}
+#logo{
+  width: 115px;
+}
+
+.carousel-item{
+  height: 500px;
+  width: 100%;
 }
