@@ -43,8 +43,8 @@ windyInit(options, windyAPI => {
         // -> 48.4, 14.3, [ U,V, ], 'wind'
         console.log(lat, lon, values, overlay);
 
-        const windObject = utils.wind2obj(values);
-        console.log(windObject);
+        const waveObject = utils.wave2obj(values);
+        console.log(waveObject);
     });
 
     picker.on('pickerMoved', latLon => {
